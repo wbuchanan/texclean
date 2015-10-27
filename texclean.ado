@@ -27,10 +27,10 @@ prog def texclean, rclass
 	version 14
 	
 	// Set program syntax
-	syntax anything(name=text id="LaTeX String to Escape"), [ Ref ] 
+	syntax anything(name=text id="LaTeX String to Escape" everything), [ Ref ] 
 	
 	// Check for LaTeX special characters
-	if 	regexm(`text', "([#\$%&~_\^\\\{\}<>\|¡¿£])") == 1 {
+	if 	regexm(`"`text'"', "([#\$%&~_\^\\\{\}<>\|¡¿£])") == 1 {
 	
 		// Store argument in new local macro
 		loc cln `"`text'"'
